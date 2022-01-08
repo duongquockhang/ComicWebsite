@@ -97,6 +97,7 @@ class ChapterController extends Controller
     {
         $chapter = Chapter::find($id);
         $truyen = Truyen::where('loaitruyen','=',NULL)->orderBy('id','DESC')->get();
+        $s = Truyen::where('loaitruyen','=',NULL)->orderBy('id','DESC')->get();
         return view('admincp.chapter.edit')->with(compact('truyen','chapter'));
     }
 
